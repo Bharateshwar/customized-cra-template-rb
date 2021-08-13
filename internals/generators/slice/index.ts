@@ -2,8 +2,8 @@
  * Container Generator
  */
 
-import { Actions, PlopGeneratorConfig } from 'node-plop';
 import path from 'path';
+import { Actions, PlopGeneratorConfig } from 'node-plop';
 import inquirer from 'inquirer';
 
 import { pathExists } from '../utils';
@@ -45,7 +45,7 @@ export const sliceGenerator: PlopGeneratorConfig = {
       message: 'Do you want sagas for asynchronous flows? (e.g. fetching data)',
     },
   ],
-  actions: data => {
+  actions: (data) => {
     const answers = data as Answers;
 
     const slicePath = `${baseGeneratorPath}/${answers.path}/slice`;
