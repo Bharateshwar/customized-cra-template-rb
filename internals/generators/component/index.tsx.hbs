@@ -4,10 +4,9 @@
 *
 */
 {{#if wantMemo}}
-import React, { memo } from 'react';
-{{else}}
-import * as React from 'react';
+import { memo } from 'react';
 {{/if}}
+import PropTypes from 'prop-types';
 {{#if wantStyledComponents}}
 import styled from 'styled-components/macro';
 {{/if}}
@@ -16,15 +15,8 @@ import { useTranslation } from 'react-i18next';
 import { messages } from './messages';
 {{/if}}
 
-interface Props {}
-
-{{#if wantMemo}}
-export const {{ properCase componentName }} = memo((props: Props) => {
-{{else}}
-export function {{ properCase componentName }}(props: Props) {
-{{/if}}
+export const {{ properCase componentName }}: React.VFC<PropTypes.InferProps<typeof propTypes>> = (props) => {
   {{#if wantTranslations}}
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { t, i18n } = useTranslation();
   {{/if}}
 
@@ -44,13 +36,18 @@ export function {{ properCase componentName }}(props: Props) {
   </div>
   {{/if}}
   );
-
-{{#if wantMemo}}
-});
-{{else}}
 };
-{{/if}}
 
 {{#if wantStyledComponents}}
 const Div = styled.div``;
+{{/if}}
+
+const propTypes = {}
+
+{{ properCase componentName }}.propTypes = propTypes;
+
+{{#if wantMemo}}
+export default memo({{ properCase componentName }});
+{{else}}
+export default {{ properCase componentName }};
 {{/if}}

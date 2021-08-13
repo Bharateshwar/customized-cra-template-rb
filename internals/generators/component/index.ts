@@ -68,7 +68,7 @@ export const componentGenerator: PlopGeneratorConfig = {
       message: 'Do you want to have tests?',
     },
   ],
-  actions: data => {
+  actions: (data) => {
     const answers = data as Answers;
 
     const componentPath = `${baseGeneratorPath}/${answers.path}/{{properCase ${ComponentProptNames.componentName}}}`;
