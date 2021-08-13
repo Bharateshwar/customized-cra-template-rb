@@ -12,11 +12,11 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
 
+import { useTranslation } from 'react-i18next';
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
-import { useTranslation } from 'react-i18next';
 
-export function App() {
+export const App = () => {
   const { i18n } = useTranslation();
   return (
     <BrowserRouter>
@@ -35,4 +35,6 @@ export function App() {
       <GlobalStyle />
     </BrowserRouter>
   );
-}
+};
+
+export default App;

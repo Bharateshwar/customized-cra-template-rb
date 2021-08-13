@@ -17,14 +17,17 @@ export const lazyLoad = <
 
   if (selectorFunc) {
     lazyFactory = () =>
-      importFunc().then(module => ({ default: selectorFunc(module) }));
+      importFunc().then((module) => ({ default: selectorFunc(module) }));
   }
 
   const LazyComponent = lazy(lazyFactory);
 
+  // eslint-disable-next-line react/display-name
   return (props: React.ComponentProps<U>): JSX.Element => (
     <Suspense fallback={opts.fallback!}>
       <LazyComponent {...props} />
     </Suspense>
   );
 };
+
+export default lazyLoad;

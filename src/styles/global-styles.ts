@@ -27,3 +27,5 @@ export const GlobalStyle = createGlobalStyle`
     font-size: inherit;
   }
 `;
+
+export default GlobalStyle;

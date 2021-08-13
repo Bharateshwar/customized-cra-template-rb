@@ -12,7 +12,7 @@ import createSagaMiddleware from 'redux-saga';
 
 import { createReducer } from './reducers';
 
-export function configureAppStore() {
+export const configureAppStore = () => {
   const reduxSagaMonitorOptions = {};
   const sagaMiddleware = createSagaMiddleware(reduxSagaMonitorOptions);
   const { run: runSaga } = sagaMiddleware;
@@ -35,4 +35,6 @@ export function configureAppStore() {
   });
 
   return store;
-}
+};
+
+export default configureAppStore;

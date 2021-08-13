@@ -6,3 +6,5 @@ export const P = styled.p`
   color: black;
   margin: 0.625rem 0 1.5rem 0;
 `;
+
+export default P;
