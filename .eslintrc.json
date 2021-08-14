@@ -1,6 +1,18 @@
 {
   "no-console": 2,
-  "import/order": 2,
+  "import/order": [
+    "error",
+    {
+      "groups": [
+        "external",
+        "internal",
+        "builtin",
+        "sibling",
+        "index",
+        "object"
+      ]
+    }
+  ],
   "no-param-reassign": 2,
   "import/prefer-default-export": 2,
   "arrow-parens": 2,
