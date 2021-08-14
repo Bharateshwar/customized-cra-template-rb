@@ -85,5 +85,6 @@
   "func-style": ["error", "expression"],
   "react/react-in-jsx-scope": "off",
   "no-prototype-builtins": 2,
-  "array-callback-return": 2
+  "array-callback-return": 2,
+  "react/jsx-no-bind": 2
 }
